@@ -10,12 +10,12 @@ const ProductList = () => {
   }, []);
 
   const getProducts = async () => {
-    const response = await axios.get("http://localhost:5000/products");
+    const response = await axios.get("http://localhost:8200/products");
     setProducts(response.data);
   };
 
   const deleteProduct = async (productId) => {
-    await axios.delete(`http://localhost:5000/products/${productId}`);
+    await axios.delete(`http://localhost:8200/products/${productId}`);
     getProducts();
   };
 
@@ -30,7 +30,7 @@ const ProductList = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Product Name</th>
+            <th>Name</th>
             <th>Price</th>
             <th>Created By</th>
             <th>Actions</th>
